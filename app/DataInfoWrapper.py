@@ -14,7 +14,7 @@ INFO_NO_EXIST = 8
 ERROR_PERMISSION_DENIED = 10
 
 
-def warpper(status_code=INFO_SUCCESS, data_list=None, message='success', return_format='dict'):
+def wrapper(status_code=INFO_SUCCESS, data_list=None, message='success', return_format='dict'):
     return_data = {}
     if data_list:
         if isinstance(data_list, str):
@@ -33,7 +33,6 @@ def warpper(status_code=INFO_SUCCESS, data_list=None, message='success', return_
         return ujson.dumps(return_data)
     else:
         return return_data
-
 
 
 
