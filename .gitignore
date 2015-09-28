@@ -1,0 +1,9 @@
+*.pyc
+*.pyo
+*.sqlite3
+.idea/
+.idea
+.DS_Store
+YiPa/settings/produce.py
+.coverage
+migrations/
