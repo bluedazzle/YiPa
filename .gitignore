@@ -6,4 +6,3 @@
 .DS_Store
 YiPa/settings/produce.py
 .coverage
-migrations/
