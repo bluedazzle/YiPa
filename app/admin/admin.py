@@ -1,5 +1,5 @@
 from django.contrib import admin
-from app.core.models import Spider
+from app.admin.models import Admin
 # Register your models here.
 
-admin.site.register(Spider)
+admin.site.register(Admin)

@@ -1,6 +1,10 @@
 # -*- coding: utf-8 -*-
 import ujson
 
+from dss import Serializer
+from django.core.paginator import Page
+from django.db.models.query import QuerySet
+
 #Info Code
 ERROR_UNKNOWN = 0
 INFO_SUCCESS = 1
@@ -24,6 +28,8 @@ def wrapper(status_code=INFO_SUCCESS, data_list=None, message='success', return_
                 pass
             except Exception, e:
                 print e
+        elif isinstance(data_list, (QuerySet, Page)):
+            data_list = Serializer.serializer(data_list, 'string', deep=True)
     return_data['status'] = status_code
     return_data['msg'] = message
     return_data['body'] = data_list
